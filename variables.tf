@@ -9,7 +9,7 @@ variable "compartment_ocid" {}
 variable "region" {}
 
 variable "app_name" {
-  default     = "HelloWorldFn"
+  default     = "MR-HelloWorldFn"
   description = "Application name. Will be used as prefix to identify resources, such as Function, VCN, DevOps, and others"
 }
 

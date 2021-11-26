@@ -36,3 +36,10 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# skipe any pem files/local secret files/local dev files
+*.pem
+terraform
+terraform.tfvars
+plan.json
+plan.out
