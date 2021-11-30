@@ -71,3 +71,27 @@ variable "deploy_stage_namespace" {
   default = "default"
 }
 
+
+variable "repository_name" {
+  default ="python-function-helloworld"
+}
+
+variable "repository_default_branch" {
+  default = "main"
+}
+
+variable "repository_description" {
+  default = "Sample code for oci function with python "
+}
+
+variable "git_repo" {
+  default = "https://github.com/RahulMR42/python_fastapi_app"
+}
+
+variable "git_repo_name" {
+  default = "oci-devops-node"
+}
+
+variable "repository_repository_type" {
+  default = "HOSTED"
+}

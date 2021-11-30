@@ -43,6 +43,9 @@ resource "oci_devops_project" "test_project" {
   defined_tags = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 }
 
+
+
+/* 
 resource "oci_devops_deploy_environment" "test_environment" {
   display_name            = "${var.app_name}_${random_string.deploy_id.result}_devops_environment"
   description             = "${var.app_name}_${random_string.deploy_id.result}_devops_environment"
@@ -106,3 +109,4 @@ resource "oci_devops_deployment" "test_deployment" {
   display_name       = "${var.app_name}_${random_string.deploy_id.result}_devops_deployment"
   defined_tags       = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 }
+*/
