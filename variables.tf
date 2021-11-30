@@ -49,12 +49,12 @@ variable "ocir_repo_name" {
   default = "functions"
 }
 
-variable "ocir_user_name" {
+variable "oci_user_name" {
   sensitive = true
   default   = ""
 }
 
-variable "ocir_user_password" {
+variable "oci_user_authtoken" {
   sensitive = true
   default   = ""
 }
