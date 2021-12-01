@@ -22,11 +22,20 @@ resource "oci_devops_build_pipeline_stage" "test_deliver_artifact_stage" {
     #Optional
     items {
       #Optional
-      artifact_id   = oci_devops_deploy_artifact.test_deploy_artifact_default.id
+      # for_each = toset(local.artifact_references)
+      # artifact_id   = "oci_devops_deploy_artifact.test_deploy_artifact_${each.key}.id"
       artifact_name = var.build_pipeline_stage_deliver_artifact_collection_items_artifact_name_default
+      artifact_id   = oci_devops_deploy_artifact.test_deploy_artifact_default.id
+      #artifact_name = var.build_pipeline_stage_deliver_artifact_collection_items_artifact_name_default
+      #artifact_id   = oci_devops_deploy_artifact.test_deploy_artifact_custom.id
+      #artifact_name = var.build_pipeline_stage_deliver_artifact_collection_items_artifact_name_custom
     }
   }
   display_name = var.deliver_artifact_stage_display_name
   defined_tags = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 
+}
+
+locals {
+  artifact_references = ["default","custom"]
 }

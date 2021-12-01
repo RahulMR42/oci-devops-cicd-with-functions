@@ -30,7 +30,7 @@ resource "oci_devops_build_pipeline_stage" "test_build_pipeline_stage" {
     }
   }
 
-  build_spec_file = var.build_pipeline_stage_build_spec_file
+  # build_spec_file = var.build_pipeline_stage_build_spec_file
 
   display_name                       = var.build_pipeline_stage_display_name
   description                        = var.build_pipeline_build_stage_description
