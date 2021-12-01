@@ -12,6 +12,7 @@ resource "oci_devops_repository" "test_repository" {
   repository_type = var.repository_repository_type
 }
 
+
 resource "null_resource" "clonerepo" {
 
   depends_on = [oci_devops_project.test_project, oci_devops_repository.test_repository]
@@ -20,6 +21,7 @@ resource "null_resource" "clonerepo" {
     command = "echo '(1) Cleaning local repo: '; rm -rf ${oci_devops_repository.test_repository.name}"
   }
 
+ 
   provisioner "local-exec" {
     command = "echo '(2) Repo to clone: https://devops.scmservice.${var.region}.oci.oraclecloud.com/namespaces/${local.ocir_namespace}/projects/${oci_devops_project.test_project.name}/repositories/${oci_devops_repository.test_repository.name}'"
   }
@@ -33,6 +35,37 @@ resource "null_resource" "clonerepo" {
   }
 
 }
+
+resource "null_resource" "clonefromgithub" {
+
+  provisioner "local-exec" {
+    command = "rm -rf ./${var.git_repo_name}"
+  }
+
+  provisioner "local-exec" {
+    command = "git clone ${var.git_repo};"
+  }
+}
+
+resource "null_resource" "copyfiles" {
+
+  depends_on = [null_resource.clonerepo]
+
+  provisioner "local-exec" {
+    command = "cd ${var.git_repo_name}; rsync -a --exclude='.*' . ../${oci_devops_repository.test_repository.name}; cd .."
+  }
+}
+
+
+resource "null_resource" "pushcode" {
+
+  depends_on = [null_resource.copyfiles]
+
+  provisioner "local-exec" {
+    command = "cd ./${oci_devops_repository.test_repository.name}; git config  user.email 'test@example.com'; git config  user.name '${var.oci_user_name}';git add .; git commit -m 'added latest files'; git push origin '${var.repository_default_branch}'"
+  }
+}
+
 
 locals {
   encode_user = urlencode(var.oci_user_name)
