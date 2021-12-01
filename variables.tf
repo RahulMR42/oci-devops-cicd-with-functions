@@ -218,3 +218,31 @@ variable "build_pipeline_stage_build_source_collection_items_connection_type" {
 variable "build_pipeline_stage_build_source_collection_items_name" {
   default = "oci-sample-function-with-python"
 }
+variable "build_pipeline_stage_deliver_artifact_stage_type" {
+  default = "DELIVER_ARTIFACT"
+}
+
+variable "build_pipeline_stage_deliver_artifact_collection_items_artifact_name_default" {
+  default = "output_fn_default_image"
+}
+
+variable "build_pipeline_stage_deliver_artifact_collection_items_artifact_name_custom" {
+  default = "output_fn_custom_image"
+}
+
+variable "deliver_artifact_stage_display_name" {
+  default = "deliver-artifact"
+}
+
+variable "container_repository_is_public" {
+  default = true
+}
+variable "deploy_artifact_argument_substitution_mode" {
+  default = "SUBSTITUTE_PLACEHOLDERS"
+}
+variable "deploy_artifact_deploy_artifact_source_deploy_artifact_source_type" {
+  default = "OCIR"
+}
+variable "deploy_artifact_deploy_artifact_type" {
+  default = "DOCKER_IMAGE"
+}
