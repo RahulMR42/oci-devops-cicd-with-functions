@@ -163,3 +163,58 @@ variable "git_repo_name" {
 variable "repository_repository_type" {
   default = "HOSTED"
 }
+
+variable "build_pipeline_description" {
+  default = "build pipeline for OCI function with Python"
+}
+
+variable "build_pipeline_build_stage_description" {
+  default = "build stage for OCI function with python"
+}
+
+variable "build_pipeline_display_name" {
+  default = "Function-Python-Buildpipeline"
+}
+
+variable "build_pipeline_stage_display_name" {
+  default = "function-python-build"
+}
+
+variable "build_pipeline_stage_build_spec_file" {
+  default = ""
+} 
+
+variable "build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id" {
+  default = "id"
+}
+
+variable "build_pipeline_stage_build_pipeline_stage_type" {
+  default = "BUILD"
+}
+variable "build_pipeline_stage_image" {
+  default = "OL7_X86_64_STANDARD_10"
+}
+
+variable "build_pipeline_stage_wait_criteria_wait_duration" {
+  default = "waitDuration"
+}
+
+variable "build_pipeline_stage_wait_criteria_wait_type" {
+  default = "ABSOLUTE_WAIT"
+}
+
+variable "build_pipeline_stage_stage_execution_timeout_in_seconds" {
+  default = 36000
+}
+
+variable "build_pipeline_stage_build_source_collection_items_branch" {
+  default = "main"
+}
+
+variable "build_pipeline_stage_build_source_collection_items_connection_type" {
+  default = "DEVOPS_CODE_REPOSITORY"
+}
+
+variable "build_pipeline_stage_build_source_collection_items_name" {
+  default = "oci-sample-function-with-python"
+}

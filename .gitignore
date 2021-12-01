@@ -43,3 +43,8 @@ terraform
 terraform.tfvars
 plan.json
 plan.out
+rm_*
+oci-sample-function-with-python/*
+oci-sample-function-with-python
+python-function-helloworld/*
+python-function-helloworld
