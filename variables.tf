@@ -247,3 +247,14 @@ variable "deploy_pipeline_deploy_pipeline_parameters_items_description" {
 variable "deploy_pipeline_description" {
   default = "Devops CI/CD Pipleline demo for functions"
 }
+
+variable "build_pipeline_stage_deploy_stage_type" {
+  default = "TRIGGER_DEPLOYMENT_PIPELINE"
+}
+
+variable "deploy_stage_display_name" {
+  default = "Invoke-Deployment"
+}
+variable "build_pipeline_stage_is_pass_all_parameters_enabled" {
+  default = true
+}
