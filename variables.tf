@@ -9,7 +9,7 @@ variable "compartment_ocid" {}
 variable "region" {}
 
 variable "app_name" {
-  default     = "mr-nra-function"
+  default     = "oci-function-cicd"
   description = "Application name. Will be used as prefix to identify resources, such as Function, VCN, DevOps, and others"
 }
 
