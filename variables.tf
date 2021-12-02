@@ -83,17 +83,6 @@ variable "create_tenancy_policies" {
   default = true
 }
 
-variable "deploy_pipeline_deploy_pipeline_parameters_items_default_value" {
-  default = "defaultValue"
-}
-
-variable "deploy_pipeline_deploy_pipeline_parameters_items_description" {
-  default = "description"
-}
-
-variable "deploy_pipeline_deploy_pipeline_parameters_items_name" {
-  default = "name"
-}
 
 variable "project_description" {
   default = "DevOps Project for Function deployment"
@@ -245,4 +234,16 @@ variable "deploy_artifact_deploy_artifact_source_deploy_artifact_source_type" {
 }
 variable "deploy_artifact_deploy_artifact_type" {
   default = "DOCKER_IMAGE"
+}
+variable "deploy_pipeline_deploy_pipeline_parameters_items_name" {
+  default = "namespace"
+}
+variable "deploy_pipeline_deploy_pipeline_parameters_items_default_value" {
+  default = "example"
+}
+variable "deploy_pipeline_deploy_pipeline_parameters_items_description" {
+  default = "exampleapp"
+}
+variable "deploy_pipeline_description" {
+  default = "Devops CI/CD Pipleline demo for functions"
 }

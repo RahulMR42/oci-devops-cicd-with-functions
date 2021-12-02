@@ -1,7 +1,7 @@
 ## Copyright (c) 2021, Oracle and/or its affiliates.
 ## All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
 
-/*
+
 resource "oci_functions_application" "test_fn_app" {
   compartment_id = var.compartment_ocid
   display_name   = "${var.app_name}App"
@@ -9,6 +9,7 @@ resource "oci_functions_application" "test_fn_app" {
   defined_tags   = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 }
 
+/*
 resource "oci_functions_function" "test_fn" {
   depends_on     = [null_resource.FnPush2OCIR]
   application_id = oci_functions_application.test_fn_app.id

@@ -46,14 +46,7 @@ resource "oci_devops_project" "test_project" {
 
 
 /* 
-resource "oci_devops_deploy_environment" "test_environment" {
-  display_name            = "${var.app_name}_${random_string.deploy_id.result}_devops_environment"
-  description             = "${var.app_name}_${random_string.deploy_id.result}_devops_environment"
-  deploy_environment_type = "FUNCTION"
-  project_id              = oci_devops_project.test_project.id
-  function_id             = oci_functions_function.test_fn.id
-  defined_tags            = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
-}
+
 
 resource "oci_devops_deploy_artifact" "test_deploy_ocir_artifact" {
   depends_on                 = [null_resource.FnPush2OCIR2]
