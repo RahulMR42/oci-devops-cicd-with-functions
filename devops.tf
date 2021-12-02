@@ -45,21 +45,7 @@ resource "oci_devops_project" "test_project" {
 
 
 
-/* 
-
-
-resource "oci_devops_deploy_artifact" "test_deploy_ocir_artifact" {
-  depends_on                 = [null_resource.FnPush2OCIR2]
-  project_id                 = oci_devops_project.test_project.id
-  deploy_artifact_type       = var.deploy_artifact_type
-  argument_substitution_mode = var.argument_substitution_mode
-  deploy_artifact_source {
-    deploy_artifact_source_type = var.deploy_artifact_source_type
-    image_uri                   = "${local.ocir_docker_repository}/${local.ocir_namespace}/${var.ocir_repo_name}/${local.app_name_lower}:${var.app_version2}"
-  }
-  defined_tags = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
-}
-
+/*
 resource "oci_devops_deploy_pipeline" "test_deploy_pipeline" {
   project_id   = oci_devops_project.test_project.id
   description  = "${var.app_name}_${random_string.deploy_id.result}_devops_pipeline"

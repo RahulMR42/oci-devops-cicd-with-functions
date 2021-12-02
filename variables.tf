@@ -236,13 +236,13 @@ variable "deploy_artifact_deploy_artifact_type" {
   default = "DOCKER_IMAGE"
 }
 variable "deploy_pipeline_deploy_pipeline_parameters_items_name" {
-  default = "namespace"
+  default = "BUILDRUN_HASH"
 }
 variable "deploy_pipeline_deploy_pipeline_parameters_items_default_value" {
   default = "example"
 }
 variable "deploy_pipeline_deploy_pipeline_parameters_items_description" {
-  default = "exampleapp"
+  default = "Tag for docker image "
 }
 variable "deploy_pipeline_description" {
   default = "Devops CI/CD Pipleline demo for functions"

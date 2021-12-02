@@ -14,11 +14,21 @@ resource "oci_devops_deploy_pipeline" "test_deploy_pipeline" {
   defined_tags = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 }
 
-# resource "oci_devops_deploy_environment" "test_environment" {
-#   display_name            = "${var.app_name}_${random_string.deploy_id.result}_devops_environment"
-#   description             = "${var.app_name}_${random_string.deploy_id.result}_devops_environment"
-#   deploy_environment_type = "FUNCTION"
-#   project_id              = oci_devops_project.test_project.id
-#   function_id             = oci_functions_function.test_fn.id
-#   defined_tags            = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
-# }
+resource "oci_devops_deploy_environment" "test_environment" {
+  display_name            = "${var.app_name}_${random_string.deploy_id.result}_devops_environment-defaultImage"
+  description             = "${var.app_name}_${random_string.deploy_id.result}_devops_environment-defaultImage"
+  deploy_environment_type = "FUNCTION"
+  project_id              = oci_devops_project.test_project.id
+  function_id             = oci_functions_function.test_fn.id
+  defined_tags            = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
+}
+
+resource "oci_devops_deploy_environment" "test_environment1" {
+  display_name            = "${var.app_name}_${random_string.deploy_id.result}_devops_environment-customImage"
+  description             = "${var.app_name}_${random_string.deploy_id.result}_devops_environment-customImage"
+  deploy_environment_type = "FUNCTION"
+  project_id              = oci_devops_project.test_project.id
+  function_id             = oci_functions_function.test_fn2.id
+  defined_tags            = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
+}
+
