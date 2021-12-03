@@ -258,3 +258,25 @@ variable "deploy_stage_display_name" {
 variable "build_pipeline_stage_is_pass_all_parameters_enabled" {
   default = true
 }
+
+variable "trigger_actions_type"{
+  default = "TRIGGER_BUILD_PIPELINE"
+}
+
+variable "trigger_state"{
+  default="ACTIVE"
+}
+variable "trigger_trigger_source"{
+  default="DEVOPS_CODE_REPOSITORY"
+}
+variable "trigger_trigger_input_event_type"{
+  default="PUSH"
+}
+
+variable "trigger_source_repo_branch"{
+  default = "main"
+}
+
+variable "trigger_action_to_invoke"{
+  default="TRIGGER_BUILD_PIPELINE"
+}
